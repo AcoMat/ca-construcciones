@@ -27,6 +27,7 @@
     --text-on-dark:#f4f4f2;
     --text-on-dark-soft:#9aa0c4;
     --max: 1180px;
+    --header-height:80px;
   }
 
   *{box-sizing:border-box;}
@@ -50,7 +51,11 @@
   }
   p{margin:0;}
   .wrap{width:100%; max-width:var(--max); margin:0 auto; padding:0 28px;}
-  section{padding:84px 0; scroll-margin-top:80px;}
+  section{
+    min-height:calc(100svh - var(--header-height));
+    display:flex; align-items:center;
+    padding:84px 0; scroll-margin-top:var(--header-height);
+  }
 
   /* ---------- header ---------- */
   header{
@@ -104,7 +109,9 @@
   .hero{
     position:relative; overflow:hidden;
     background:var(--navy);
-    padding:32px 0 0;
+    min-height:calc(100svh - var(--header-height));
+    display:flex; align-items:center;
+    padding:0;
   }
   .hero::before{
     content:"";
@@ -150,27 +157,36 @@
     gap:14px;
   }
   .gallery-item{
-    position:relative; overflow:hidden;
+    position:relative; overflow:hidden; cursor:zoom-in;
     border:1px solid var(--line-on-light-strong);
     background:
       repeating-linear-gradient(135deg, rgba(5,8,38,0.06) 0 2px, transparent 2px 14px),
       linear-gradient(160deg, var(--silver), var(--navy-3));
     display:flex; align-items:center; justify-content:center;
   }
+  .gallery-item img{width:100%; height:100%; object-fit:cover;}
+  .gallery-item:focus-visible{outline:3px solid var(--gold-deep); outline-offset:4px;}
   .gallery-item.tall{grid-row:span 2;}
-  .gallery-item .frame-icon{opacity:0.6;}
-  .gallery-item .caption{
-    position:absolute; left:0; right:0; bottom:0; padding:12px 14px 10px;
-    background:linear-gradient(to top, rgba(5,8,38,0.85), rgba(5,8,38,0));
+  .lightbox{
+    position:fixed; inset:0; z-index:100;
+    display:flex; align-items:center; justify-content:center;
+    padding:28px 78px;
+    background:rgba(5,8,38,0.94);
   }
-  .gallery-item .caption .type{
-    display:block; font-size:13px; font-weight:600; color:var(--text-on-dark);
-    text-transform:uppercase; letter-spacing:0.01em;
+  .lightbox[hidden]{display:none;}
+  .lightbox figure{margin:0; max-width:min(1100px, 100%); max-height:100%; text-align:center;}
+  .lightbox img{width:auto; max-width:100%; max-height:calc(100vh - 110px); object-fit:contain; margin:0 auto;}
+  .lightbox button{
+    position:absolute; display:flex; align-items:center; justify-content:center;
+    width:42px; height:42px; padding:0; border:1px solid var(--line-on-dark);
+    background:rgba(5,8,38,0.72); color:var(--text-on-dark);
+    font-family:'Inter',sans-serif; font-size:28px; line-height:1; cursor:pointer;
   }
-  .gallery-item .caption .loc{
-    display:block; font-size:11px; color:var(--gold); margin-top:2px;
-    font-family:'IBM Plex Mono',monospace;
-  }
+  .lightbox button:hover{background:var(--gold); color:var(--navy);}
+  .lightbox button:focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
+  .lightbox-close{top:22px; right:24px;}
+  .lightbox-prev{left:24px; top:50%; transform:translateY(-50%);}
+  .lightbox-next{right:24px; top:50%; transform:translateY(-50%);}
 
   /* ---------- contacto ---------- */
   .contact{background:var(--ivory-2); border-top:1px solid var(--line-on-light-strong);}
@@ -204,6 +220,7 @@
 
   /* ---------- responsive ---------- */
   @media (max-width: 900px){
+    :root{--header-height:72px;}
     .nav{height:72px;}
     nav.links{display:none;}
     .menu-btn{display:block;}
@@ -238,6 +255,12 @@
     .gallery-grid{grid-template-columns:1fr; grid-auto-rows:220px; gap:12px;}
     .gallery-item.tall{grid-row:span 1;}
     .contact-grid{gap:32px;}
+    .lightbox{padding:58px 48px 28px;}
+    .lightbox img{max-height:calc(100vh - 130px);}
+    .lightbox button{width:38px; height:38px; font-size:24px;}
+    .lightbox-close{top:14px; right:14px;}
+    .lightbox-prev{left:8px;}
+    .lightbox-next{right:8px;}
     footer{padding-top:44px;}
     .foot-brand img{height:76px;}
   }
@@ -318,28 +341,43 @@
 
     <div class="gallery-grid">
       <div class="gallery-item tall">
-        <svg class="frame-icon" width="42" height="42" viewBox="0 0 42 42" fill="none"><rect x="3" y="3" width="36" height="36" stroke="var(--navy-3)" stroke-width="2"/><circle cx="15" cy="14" r="3.5" stroke="var(--navy-3)" stroke-width="2"/><path d="M6 30l9-10 7 7 5-6 9 9" stroke="var(--navy-3)" stroke-width="2" fill="none"/></svg>
-        <div class="caption"><span class="type">Vivienda unifamiliar</span><span class="loc">Quilmes</span></div>
+        <img src="images/IMG_20260725_131446476_HDR-compressed.webp" alt="Edificio de hormigón armado en construcción">
       </div>
       <div class="gallery-item">
-        <svg class="frame-icon" width="34" height="34" viewBox="0 0 42 42" fill="none"><rect x="3" y="3" width="36" height="36" stroke="var(--navy-3)" stroke-width="2"/><circle cx="15" cy="14" r="3.5" stroke="var(--navy-3)" stroke-width="2"/><path d="M6 30l9-10 7 7 5-6 9 9" stroke="var(--navy-3)" stroke-width="2" fill="none"/></svg>
-        <div class="caption"><span class="type">Ampliación en altura</span><span class="loc">Bernal</span></div>
+        <img src="images/IMG_20250814_080418948_HDR-compressed.webp" alt="Estructura de hormigón armado en construcción">
       </div>
       <div class="gallery-item">
-        <svg class="frame-icon" width="34" height="34" viewBox="0 0 42 42" fill="none"><rect x="3" y="3" width="36" height="36" stroke="var(--navy-3)" stroke-width="2"/><circle cx="15" cy="14" r="3.5" stroke="var(--navy-3)" stroke-width="2"/><path d="M6 30l9-10 7 7 5-6 9 9" stroke="var(--navy-3)" stroke-width="2" fill="none"/></svg>
-        <div class="caption"><span class="type">Edificio de renta</span><span class="loc">Avellaneda</span></div>
+        <img src="images/IMG-20250425-WA0015-compressed.webp" alt="Obra de hormigón armado en construcción">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20231020-WA0004-compressed.webp" alt="Estructura de hormigón armado en construcción">
       </div>
       <div class="gallery-item tall">
-        <svg class="frame-icon" width="42" height="42" viewBox="0 0 42 42" fill="none"><rect x="3" y="3" width="36" height="36" stroke="var(--navy-3)" stroke-width="2"/><circle cx="15" cy="14" r="3.5" stroke="var(--navy-3)" stroke-width="2"/><path d="M6 30l9-10 7 7 5-6 9 9" stroke="var(--navy-3)" stroke-width="2" fill="none"/></svg>
-        <div class="caption"><span class="type">Galpón industrial</span><span class="loc">Berazategui</span></div>
+        <img src="images/IMG_20191121_072641591_HDR-compressed.webp" alt="Estructura de hormigón armado en construcción">
       </div>
       <div class="gallery-item">
-        <svg class="frame-icon" width="34" height="34" viewBox="0 0 42 42" fill="none"><rect x="3" y="3" width="36" height="36" stroke="var(--navy-3)" stroke-width="2"/><circle cx="15" cy="14" r="3.5" stroke="var(--navy-3)" stroke-width="2"/><path d="M6 30l9-10 7 7 5-6 9 9" stroke="var(--navy-3)" stroke-width="2" fill="none"/></svg>
-        <div class="caption"><span class="type">Refuerzo estructural</span><span class="loc">Lanús</span></div>
+        <img src="images/IMG-20191001-WA0009-compressed.webp" alt="Estructura de hormigón armado en construcción">
       </div>
       <div class="gallery-item">
-        <svg class="frame-icon" width="34" height="34" viewBox="0 0 42 42" fill="none"><rect x="3" y="3" width="36" height="36" stroke="var(--navy-3)" stroke-width="2"/><circle cx="15" cy="14" r="3.5" stroke="var(--navy-3)" stroke-width="2"/><path d="M6 30l9-10 7 7 5-6 9 9" stroke="var(--navy-3)" stroke-width="2" fill="none"/></svg>
-        <div class="caption"><span class="type">Losas y contrapisos</span><span class="loc">Quilmes</span></div>
+        <img src="images/IMG-20190530-WA0025-compressed.webp" alt="Estructura de hormigón armado en construcción">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20190214-WA0015-compressed.webp" alt="Construcción de estructura de hormigón armado">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20180529-WA0010-compressed.webp" alt="Columnas y vigas de hormigón armado">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG_20170824_103032609_HDR-compressed.webp" alt="Encofrado de losa de hormigón armado">
+      </div>
+      <div class="gallery-item">
+        <img src="images/20170210_101548-compressed.webp" alt="Hormigonado y estructura de obra">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20160511-WA0000-compressed.webp" alt="Estructura de hormigón armado terminada">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG_20141128_105130_999-compressed.webp" alt="Encofrado y estructura de hormigón armado en obra">
       </div>
     </div>
   </div>
@@ -352,32 +390,26 @@
         <span class="kicker">Contacto</span>
         <h2>Contanos tu proyecto</h2>
       </div>
-      <p>Respondemos en el día. Si ya tenés planos o cálculo de otro profesional, podés adjuntarlos por mail.</p>
     </div>
 
     <div class="contact-grid">
-      <form onsubmit="event.preventDefault(); alert('Formulario de ejemplo — conectar a un servicio de envío de correo o backend propio.');">
+      <form action="https://formspree.io/f/xdekrbod" method="POST">
+        <input type="hidden" name="_subject" value="Nueva consulta desde CA Construcciones">
         <div class="field">
           <label for="nombre">Nombre y apellido</label>
-          <input id="nombre" type="text" placeholder="Ej: María Gómez" required>
+          <input id="nombre" name="nombre" type="text" placeholder="Ej: María Gómez" required>
         </div>
         <div class="field">
           <label for="telefono">Teléfono</label>
-          <input id="telefono" type="tel" placeholder="011 1234-5678" required>
+          <input id="telefono" name="telefono" type="tel" placeholder="011 1234-5678" required>
         </div>
         <div class="field">
-          <label for="tipo">Tipo de obra</label>
-          <select id="tipo">
-            <option>Vivienda unifamiliar</option>
-            <option>Ampliación o refuerzo</option>
-            <option>Edificio en altura</option>
-            <option>Galpón o nave industrial</option>
-            <option>Otro</option>
-          </select>
+          <label for="asunto">Asunto</label>
+          <input id="asunto" name="asunto" type="text" placeholder="Ej: Consulta por una obra" required>
         </div>
         <div class="field">
           <label for="mensaje">Contanos brevemente tu proyecto</label>
-          <textarea id="mensaje" placeholder="Ubicación, metros cuadrados aproximados, estado actual de la obra..."></textarea>
+          <textarea id="mensaje" name="mensaje" placeholder="Ubicación, metros cuadrados aproximados, estado actual de la obra..."></textarea>
         </div>
         <button class="btn" type="submit">Enviar consulta</button>
       </form>
@@ -389,7 +421,7 @@
         </div>
         <div class="info-block">
           <h3>Email</h3>
-          <p><a href="mailto:c.aacosta@hotmail.com">c.aacosta@hotmail.com</a></p>
+          <p><a href="mailto:c.arielconstrucciones@hotmail.com">c.arielconstrucciones@hotmail.com</a></p>
         </div>
       </div>
     </div>
@@ -414,7 +446,7 @@
         <h4>Contacto</h4>
         <ul>
           <li><a href="tel:+541161711459">11 6171-1459</a></li>
-          <li><a href="mailto:c.aacosta@hotmail.com">c.aacosta@hotmail.com</a></li>
+          <li><a href="mailto:c.arielconstrucciones@hotmail.com">c.arielconstrucciones@hotmail.com</a></li>
           <li>Quilmes, Buenos Aires</li>
         </ul>
       </div>
@@ -424,6 +456,15 @@
     </div>
   </div>
 </footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden>
+  <button class="lightbox-close" type="button" aria-label="Cerrar imagen">&times;</button>
+  <button class="lightbox-prev" type="button" aria-label="Imagen anterior">&#8249;</button>
+  <figure>
+    <img src="" alt="">
+  </figure>
+  <button class="lightbox-next" type="button" aria-label="Imagen siguiente">&#8250;</button>
+</div>
 
 <script>
   const menuButton = document.querySelector('.menu-btn');
@@ -442,6 +483,65 @@
       menuButton.setAttribute('aria-expanded', 'false');
       menuButton.setAttribute('aria-label', 'Abrir menú');
     });
+  });
+
+  const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+  const lightbox = document.querySelector('#lightbox');
+  const lightboxImage = lightbox.querySelector('img');
+  const closeButton = lightbox.querySelector('.lightbox-close');
+  const previousButton = lightbox.querySelector('.lightbox-prev');
+  const nextButton = lightbox.querySelector('.lightbox-next');
+  let currentImageIndex = 0;
+  let lastFocusedElement;
+
+  const showImage = (index) => {
+    currentImageIndex = (index + galleryItems.length) % galleryItems.length;
+    const item = galleryItems[currentImageIndex];
+    const image = item.querySelector('img');
+
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+  };
+
+  const openLightbox = (index) => {
+    lastFocusedElement = document.activeElement;
+    showImage(index);
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+    closeButton.focus();
+  };
+
+  const closeLightbox = () => {
+    lightbox.hidden = true;
+    document.body.style.overflow = '';
+    if (lastFocusedElement) lastFocusedElement.focus();
+  };
+
+  galleryItems.forEach((item, index) => {
+    const image = item.querySelector('img');
+    item.setAttribute('role', 'button');
+    item.setAttribute('tabindex', '0');
+    item.setAttribute('aria-label', `Ampliar imagen: ${image.alt}`);
+    item.addEventListener('click', () => openLightbox(index));
+    item.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openLightbox(index);
+      }
+    });
+  });
+
+  closeButton.addEventListener('click', closeLightbox);
+  previousButton.addEventListener('click', () => showImage(currentImageIndex - 1));
+  nextButton.addEventListener('click', () => showImage(currentImageIndex + 1));
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (lightbox.hidden) return;
+    if (event.key === 'Escape') closeLightbox();
+    if (event.key === 'ArrowLeft') showImage(currentImageIndex - 1);
+    if (event.key === 'ArrowRight') showImage(currentImageIndex + 1);
   });
 </script>
 
