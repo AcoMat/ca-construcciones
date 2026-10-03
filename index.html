@@ -198,6 +198,7 @@
   }
   .gallery-item{
     position:relative; overflow:hidden; cursor:zoom-in;
+    contain:layout paint;
     border:1px solid var(--line-on-light-strong);
     background:
       repeating-linear-gradient(135deg, rgba(5,8,38,0.06) 0 2px, transparent 2px 14px),
@@ -789,6 +790,21 @@
   });
 
   const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+  const galleryVideos = galleryItems
+    .map((item) => item.querySelector('video'))
+    .filter(Boolean);
+  if ('IntersectionObserver' in window) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.play().catch(() => {});
+        } else {
+          entry.target.pause();
+        }
+      });
+    }, {rootMargin: '160px 0px'});
+    galleryVideos.forEach((video) => videoObserver.observe(video));
+  }
   const lightbox = document.querySelector('#lightbox');
   const lightboxImage = lightbox.querySelector('img');
   const lightboxVideo = lightbox.querySelector('video');
