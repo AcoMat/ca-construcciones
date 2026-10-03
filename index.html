@@ -4,9 +4,39 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CA Construcciones — Estructuras en Hormigón Armado</title>
-<meta name="description" content="CA Construcciones: cálculo, ejecución y encofrado de estructuras en hormigón armado en Quilmes y Buenos Aires.">
+<meta name="description" content="CA Construcciones realiza estructuras de hormigón armado, fundaciones, plateas, subsuelos, columnas, vigas, losas, mampostería, piscinas y proyectos llave en mano en Quilmes y Buenos Aires.">
+<meta name="author" content="CA Construcciones">
 <meta name="theme-color" content="#050826">
 <meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="CA Construcciones">
+<meta property="og:title" content="CA Construcciones — Estructuras en Hormigón Armado">
+<meta property="og:description" content="Cálculo, ejecución y encofrado de estructuras en hormigón armado en Quilmes y Buenos Aires.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CA Construcciones — Estructuras en Hormigón Armado">
+<meta name="twitter:description" content="Cálculo, ejecución y encofrado de estructuras en hormigón armado en Quilmes y Buenos Aires.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "name": "CA Construcciones",
+  "description": "Cálculo, ejecución y encofrado de estructuras en hormigón armado.",
+  "telephone": "+54 11 6171-1459",
+  "email": "c.arielconstrucciones@hotmail.com",
+  "areaServed": {
+    "@type": "Place",
+    "name": "Quilmes y Buenos Aires"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Quilmes",
+    "addressRegion": "Buenos Aires",
+    "addressCountry": "AR"
+  },
+  "priceRange": "$$"
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
@@ -149,6 +179,12 @@
     text-transform:uppercase;
     letter-spacing:0.01em;
   }
+  .hero-description{
+    color:var(--text-on-dark-soft);
+    font-size:16px;
+    max-width:62ch;
+    margin-top:22px;
+  }
   .hero-cta{display:flex; gap:16px; margin-top:34px; flex-wrap:wrap;}
   .section-head h2{font-size:clamp(27px,3.1vw,38px); font-weight:600; max-width:15ch; text-transform:uppercase;}
   .section-head p{color:var(--text-soft); font-size:16.5px; max-width:48ch;}
@@ -168,7 +204,7 @@
       linear-gradient(160deg, var(--silver), var(--navy-3));
     display:flex; align-items:center; justify-content:center;
   }
-  .gallery-item img{width:100%; height:100%; object-fit:cover;}
+  .gallery-item img, .gallery-item video{width:100%; height:100%; object-fit:cover;}
   .gallery-item:focus-visible{outline:3px solid var(--gold-deep); outline-offset:4px;}
   .gallery-item.tall{grid-row:span 2;}
   .lightbox{
@@ -179,7 +215,7 @@
   }
   .lightbox[hidden]{display:none;}
   .lightbox figure{margin:0; max-width:min(1100px, 100%); max-height:100%; text-align:center;}
-  .lightbox img{width:auto; max-width:100%; max-height:calc(100vh - 110px); object-fit:contain; margin:0 auto;}
+  .lightbox img, .lightbox video{width:auto; max-width:100%; max-height:calc(100vh - 110px); object-fit:contain; margin:0 auto;}
   .lightbox button{
     position:absolute; display:flex; align-items:center; justify-content:center;
     width:42px; height:42px; padding:0; border:1px solid var(--line-on-dark);
@@ -309,6 +345,7 @@
   </div>
 </header>
 
+<main>
 <section class="hero">
   <svg class="skyline-bg" viewBox="0 0 1200 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <rect x="0" y="120" width="55" height="100" fill="var(--silver)"/>
@@ -330,6 +367,7 @@
     <div class="hero-inner">
       <div class="eyebrow-line"><span class="dash"></span><span>Maestro Mayor de Obra · Cálculo y ejecución estructural</span></div>
       <h1>Encofrado de hormigón armado y ejecutor estructural</h1>
+      <p class="hero-description">Realizamos todo tipo de estructuras de hormigón: fundaciones, plateas, subsuelos, tabiques, bases, columnas, vigas, losas, mampostería, proyectos llave en mano y piscinas.</p>
       <div class="hero-cta">
         <a class="btn" href="#contacto">Pedir presupuesto</a>
         <a class="btn btn-ghost" href="#proyectos">Ver obras realizadas</a>
@@ -360,23 +398,26 @@
       <div class="gallery-item">
         <img src="images/IMG-20231020-WA0004-compressed.webp" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
       </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20190530-WA0025-compressed.webp" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20180529-WA0010-compressed.webp" alt="Columnas y vigas de hormigón armado" loading="lazy" decoding="async">
+      </div>
       <div class="gallery-item tall">
         <img src="images/IMG_20191121_072641591_HDR-compressed.webp" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20190214-WA0015-compressed.webp" alt="Construcción de estructura de hormigón armado" loading="lazy" decoding="async">
       </div>
       <div class="gallery-item">
         <img src="images/IMG-20191001-WA0009-compressed.webp" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
       </div>
       <div class="gallery-item">
-        <img src="images/IMG-20190530-WA0025-compressed.webp" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
-      </div>
-      <div class="gallery-item">
-        <img src="images/IMG-20190214-WA0015-compressed.webp" alt="Construcción de estructura de hormigón armado" loading="lazy" decoding="async">
+        <img src="images/IMG_20170824_103032609_HDR-compressed.webp" alt="Encofrado de losa de hormigón armado" loading="lazy" decoding="async">
       </div>
       <div class="gallery-item tall">
-        <img src="images/IMG-20180529-WA0010-compressed.webp" alt="Columnas y vigas de hormigón armado" loading="lazy" decoding="async">
-      </div>
-      <div class="gallery-item">
-        <img src="images/IMG_20170824_103032609_HDR-compressed.webp" alt="Encofrado de losa de hormigón armado" loading="lazy" decoding="async">
+        <img src="images/IMG_20141128_105130_999-compressed.webp" alt="Encofrado y estructura de hormigón armado en obra" loading="lazy" decoding="async">
       </div>
       <div class="gallery-item">
         <img src="images/20170210_101548-compressed.webp" alt="Hormigonado y estructura de obra" loading="lazy" decoding="async">
@@ -384,9 +425,256 @@
       <div class="gallery-item">
         <img src="images/IMG-20160511-WA0000-compressed.webp" alt="Estructura de hormigón armado terminada" loading="lazy" decoding="async">
       </div>
-      <div class="gallery-item tall">
-        <img src="images/IMG_20141128_105130_999-compressed.webp" alt="Encofrado y estructura de hormigón armado en obra" loading="lazy" decoding="async">
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0059.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
       </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0060.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <video src="videos/VID-20261003-WA0047.mp4" muted loop autoplay playsinline preload="metadata" aria-label="Video de obra de hormigón armado"></video>
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0061.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0062.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0063.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0064.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0065.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0066.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0067.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0068.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0069.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0070.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0071.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0072.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0073.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0074.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0075.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <video src="videos/VID-20261003-WA0050.mp4" muted loop autoplay playsinline preload="metadata" aria-label="Video de obra de hormigón armado"></video>
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0076.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0077.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0079.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0080.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0081.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0082.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0083.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0084.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0085.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0086.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0087.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0088.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0089.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0043.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0044.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <video src="videos/VID-20261003-WA0029.mp4" muted loop autoplay playsinline preload="metadata" aria-label="Video de obra de hormigón armado"></video>
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0045.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0046.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0049.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0051.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0052.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0053.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0054.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0056.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0057.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0058.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0033.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0034.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0035.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0036.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0037.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <video src="videos/VID-20261003-WA0032.mp4" muted loop autoplay playsinline preload="metadata" aria-label="Video de obra de hormigón armado"></video>
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0040.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0041.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0042.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0004.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0005.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0006.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0007.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0008.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0009.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0010.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0011.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0012.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0013.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0014.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0015.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <video src="videos/VID-20260729-WA0003.mp4" muted loop autoplay playsinline preload="metadata" aria-label="Video de obra de hormigón armado"></video>
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0016.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0017.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0018.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0019.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0020.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0021.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0022.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0023.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0024.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0025.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0026.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0027.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0028.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/IMG-20261003-WA0030.jpg" alt="Estructura de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <img src="images/IMG-20261003-WA0031.jpg" alt="Obra de hormigón armado en construcción" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-item">
+        <video src="videos/VID-20260729-WA0004.mp4" muted loop autoplay playsinline preload="metadata" aria-label="Video de obra de hormigón armado"></video>
+      </div>
+
     </div>
   </div>
 </section>
@@ -440,6 +728,8 @@
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="wrap">
     <div class="foot-grid">
@@ -474,6 +764,7 @@
   <button class="lightbox-prev" type="button" aria-label="Imagen anterior">&#8249;</button>
   <figure>
     <img src="" alt="">
+    <video controls playsinline hidden></video>
   </figure>
   <button class="lightbox-next" type="button" aria-label="Imagen siguiente">&#8250;</button>
 </div>
@@ -500,40 +791,56 @@
   const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
   const lightbox = document.querySelector('#lightbox');
   const lightboxImage = lightbox.querySelector('img');
+  const lightboxVideo = lightbox.querySelector('video');
   const closeButton = lightbox.querySelector('.lightbox-close');
   const previousButton = lightbox.querySelector('.lightbox-prev');
   const nextButton = lightbox.querySelector('.lightbox-next');
-  let currentImageIndex = 0;
+  let currentMediaIndex = 0;
   let lastFocusedElement;
 
-  const showImage = (index) => {
-    currentImageIndex = (index + galleryItems.length) % galleryItems.length;
-    const item = galleryItems[currentImageIndex];
+  const showMedia = (index) => {
+    currentMediaIndex = (index + galleryItems.length) % galleryItems.length;
+    const item = galleryItems[currentMediaIndex];
     const image = item.querySelector('img');
+    const video = item.querySelector('video');
 
+    lightboxVideo.pause();
+    if (video) {
+      lightboxImage.hidden = true;
+      lightboxVideo.hidden = false;
+      lightboxVideo.src = video.currentSrc || video.src;
+      lightboxVideo.load();
+      lightboxVideo.play().catch(() => {});
+      return;
+    }
+
+    lightboxVideo.hidden = true;
+    lightboxVideo.removeAttribute('src');
+    lightboxImage.hidden = false;
     lightboxImage.src = image.src;
     lightboxImage.alt = image.alt;
   };
 
   const openLightbox = (index) => {
     lastFocusedElement = document.activeElement;
-    showImage(index);
+    showMedia(index);
     lightbox.hidden = false;
     document.body.style.overflow = 'hidden';
     closeButton.focus();
   };
 
   const closeLightbox = () => {
+    lightboxVideo.pause();
     lightbox.hidden = true;
     document.body.style.overflow = '';
     if (lastFocusedElement) lastFocusedElement.focus();
   };
 
   galleryItems.forEach((item, index) => {
-    const image = item.querySelector('img');
+    const media = item.querySelector('img, video');
     item.setAttribute('role', 'button');
     item.setAttribute('tabindex', '0');
-    item.setAttribute('aria-label', `Ampliar imagen: ${image.alt}`);
+    item.setAttribute('aria-label', media.tagName === 'VIDEO' ? 'Reproducir video de obra' : `Ampliar imagen: ${media.alt}`);
     item.addEventListener('click', () => openLightbox(index));
     item.addEventListener('keydown', (event) => {
       if (event.key === 'Enter' || event.key === ' ') {
@@ -544,16 +851,16 @@
   });
 
   closeButton.addEventListener('click', closeLightbox);
-  previousButton.addEventListener('click', () => showImage(currentImageIndex - 1));
-  nextButton.addEventListener('click', () => showImage(currentImageIndex + 1));
+  previousButton.addEventListener('click', () => showMedia(currentMediaIndex - 1));
+  nextButton.addEventListener('click', () => showMedia(currentMediaIndex + 1));
   lightbox.addEventListener('click', (event) => {
     if (event.target === lightbox) closeLightbox();
   });
   document.addEventListener('keydown', (event) => {
     if (lightbox.hidden) return;
     if (event.key === 'Escape') closeLightbox();
-    if (event.key === 'ArrowLeft') showImage(currentImageIndex - 1);
-    if (event.key === 'ArrowRight') showImage(currentImageIndex + 1);
+    if (event.key === 'ArrowLeft') showMedia(currentMediaIndex - 1);
+    if (event.key === 'ArrowRight') showMedia(currentMediaIndex + 1);
   });
 </script>
 
