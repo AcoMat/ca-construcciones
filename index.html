@@ -205,6 +205,22 @@
       linear-gradient(160deg, var(--silver), var(--navy-3));
     display:flex; align-items:center; justify-content:center;
   }
+  .gallery-item.is-loading::after{
+    content:"";
+    position:absolute;
+    width:30px; height:30px;
+    border:3px solid rgba(244,244,242,0.45);
+    border-top-color:var(--gold);
+    border-radius:50%;
+    animation:gallery-spinner .8s linear infinite;
+    pointer-events:none;
+  }
+  @keyframes gallery-spinner{
+    to{transform:rotate(360deg);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .gallery-item.is-loading::after{animation-duration:1.8s;}
+  }
   .gallery-item img, .gallery-item video{width:100%; height:100%; object-fit:cover;}
   .gallery-item:focus-visible{outline:3px solid var(--gold-deep); outline-offset:4px;}
   .gallery-item.tall{grid-row:span 2;}
@@ -793,6 +809,21 @@
   const galleryVideos = galleryItems
     .map((item) => item.querySelector('video'))
     .filter(Boolean);
+  galleryItems.forEach((item) => {
+    const media = item.querySelector('img, video');
+    item.classList.add('is-loading');
+
+    const finishLoading = () => item.classList.remove('is-loading');
+    media.addEventListener('load', finishLoading, {once: true});
+    media.addEventListener('loadeddata', finishLoading, {once: true});
+    media.addEventListener('error', finishLoading, {once: true});
+
+    if (media.tagName === 'IMG' && media.complete) {
+      finishLoading();
+    } else if (media.tagName === 'VIDEO' && media.readyState >= 2) {
+      finishLoading();
+    }
+  });
   if ('IntersectionObserver' in window) {
     const videoObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
