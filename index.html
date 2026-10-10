@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="es-AR">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B0SFBFWGK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B0SFBFWGK1');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CA Construcciones — Estructuras en Hormigón Armado</title>
@@ -262,6 +271,7 @@
   /* ---------- contacto ---------- */
   .contact{background:var(--ivory-2); border-top:1px solid var(--line-on-light-strong);}
   .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:64px;}
+  .contact-grid > *{min-width:0;}
   .field{margin-bottom:20px;}
   .field label{display:block; font-size:13px; font-weight:600; margin-bottom:8px; color:var(--text-soft);}
   .field input, .field select, .field textarea{
@@ -277,9 +287,11 @@
   .contact-icon{width:18px; height:18px; flex:0 0 auto; color:var(--gold-deep);}
   .info-block h3{font-size:14px; font-weight:700; margin-bottom:10px; color:var(--gold-deep); text-transform:uppercase; font-family:'Inter',sans-serif; letter-spacing:0.02em;}
   .info-block p, .info-block a{font-size:15.5px; color:var(--text); text-decoration:none;}
+  .info-block a{overflow-wrap:anywhere;}
   /* ---------- footer ---------- */
   footer{background:var(--navy); color:var(--text-on-dark-soft); padding:56px 0 26px;}
   .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; padding-bottom:36px; border-bottom:1px solid var(--line-on-dark); align-items:start;}
+  .foot-grid > *{min-width:0;}
   .foot-brand img{height:96px; width:auto; margin-bottom:16px;}
   .foot-brand p{margin-top:14px; font-size:14px; max-width:34ch;}
   footer h4{color:var(--text-on-dark); font-size:13px; font-weight:700; margin-bottom:14px; text-transform:uppercase; letter-spacing:0.03em; font-family:'Inter',sans-serif;}
@@ -287,6 +299,7 @@
   footer .contact-list li{display:flex; align-items:flex-start; gap:9px;}
   .footer-icon{width:16px; height:16px; flex:0 0 auto; margin-top:2px; color:var(--gold);}
   footer a{text-decoration:none; font-size:14px;}
+  footer .contact-list a{overflow-wrap:anywhere;}
   footer a:hover{color:var(--text-on-dark);}
   .bottom-row{
     display:flex; justify-content:space-between; align-items:center;
